@@ -52,20 +52,20 @@ class Exe2 {
     }
     static void setLabel(String name, File asm_file, File it) {
 
-         asm_file.append("("+ getWithFileName(name, it)+ ")\n")
+        asm_file.append("("+ getWithFileName(name, it)+ ")\n")
     }
     static void setGoto(String label, File asm_file, File it) {
         asm_file.append("@" + getWithFileName(label, it) + "\n"
-                        + "0;JMP\n")
+                + "0;JMP\n")
     }
     static void setIfGoto(String label, File asm_file, File it) {
         asm_file.append("@SP\n" +
-                        "A=M-1\n" +
-                        "D=M\n" +
-                        "@SP\n" +
-                        "M=M-1\n" +
-                        "@" + getWithFileName(label, it) + "\n" +
-                        "D;JNE\n")
+                "A=M-1\n" +
+                "D=M\n" +
+                "@SP\n" +
+                "M=M-1\n" +
+                "@" + getWithFileName(label, it) + "\n" +
+                "D;JNE\n")
     }
     static void setSimpleAritmCommend(String cmd, File asm_file) {
         String op
@@ -261,6 +261,7 @@ class Exe2 {
         }
     }
 }
+
 
 
 
